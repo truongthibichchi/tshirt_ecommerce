@@ -34,16 +34,16 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseMulti">
           <li>
-            <a href="{!! url('admin/manageHome') !!}">Sale Order</a>
+            <a href="{!! url('admin/order') !!}">Sale Order</a>
           </li>
           <li>
-            <a href="{!! url('admin/manageHome') !!}">Customer</a>
+            <a href="{!! url('admin/customer') !!}">Customer</a>
           </li>
         </ul>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{!! url('admin/manageHome') !!}">
+          <a class="nav-link" href="{!! url('admin/product') !!}">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text" href="{!! url('admin/manageHome') !!}">Product</span>
+            <span class="nav-link-text" href="{!! url('admin/product') !!}">Product</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -59,19 +59,19 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="{!! url('admin/manageHome') !!}">Product Category</a>
+              <a href="{!! url('admin/setting/productCategory') !!}">Product Category</a>
             </li>
             <li>
-              <a href="{!! url('admin/manageHome') !!}">Option</a>
+              <a href="{!! url('admin/setting/option') !!}">Option</a>
             </li>
             <li>
-              <a href="{!! url('admin/manageHome') !!}">City</a>
+              <a href="{!! url('admin/setting/city') !!}">City</a>
             </li>
             <li>
-              <a href="{!! url('admin/manageHome') !!}">Shipper</a>
+              <a href="{!! url('admin/setting/shipper') !!}">Shipper</a>
             </li>
             <li>
-              <a href="{!! url('admin/manageHome') !!}">Payment</a>
+              <a href="{!! url('admin/setting/payment') !!}">Payment</a>
             </li>
             
           </ul>
