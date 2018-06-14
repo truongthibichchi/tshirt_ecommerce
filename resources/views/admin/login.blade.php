@@ -9,6 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Log In</title>
+   <base href="{{ asset('') }}">
   <!-- Bootstrap core CSS-->
   <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -22,7 +23,7 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form >
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input class="form-control" id="emailuser" type="email" aria-describedby="emailHelp" placeholder="Enter email" required="">
@@ -37,7 +38,7 @@
                 <input class="form-check-input" type="checkbox" required=""> Remember Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="">Login</a>
+          <a class="btn btn-primary btn-block" href="{!! url('admin/manageHome') !!}">Login</a>
         </form>
       </div>
     </div>

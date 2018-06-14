@@ -5,5 +5,6 @@
 // });
 
 Route::group(['prefix'=>'admin'],function(){
-	Route::get('/','manageHomeController@Index');
+	Route::get('/','manageHomeController@index');
+	Route::get('manageHome','manageHomeController@home');
 });
