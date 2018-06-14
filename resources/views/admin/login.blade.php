@@ -10,11 +10,11 @@
   <meta name="author" content="">
   <title>Log In</title>
   <!-- Bootstrap core CSS-->
-  <link href="admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="admin_asset/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="admin/css/sb-admin.css" rel="stylesheet">
+  <link href="admin_asset/css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
@@ -43,10 +43,10 @@
     </div>
   </div>
   <!-- Bootstrap core JavaScript-->
-  <script src="admin/vendor/jquery/jquery.min.js"></script>
-  <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="admin_asset/vendor/jquery/jquery.min.js"></script>
+  <script src="admin_asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
-  <script src="admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="admin_asset/vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>
