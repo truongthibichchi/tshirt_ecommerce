@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Tshirt Ecommerce</title>
+  <link rel="icon" href="{!! asset('admin_asset/images/icon.png') !!}"/>
   <base href="{{asset('')}}">
   <!-- <base href="http://localhost:8000/tshirt_ecommerce/public"> -->
   <!-- Bootstrap core CSS-->
@@ -33,19 +34,24 @@
           <span class="nav-link-text">Sale</span>
         </a>
         <ul class="sidenav-second-level collapse" id="collapseMulti">
-          <li>
-            <a href="{!! url('admin/order') !!}">Sale Order</a>
-          </li>
-          <li>
-            <a href="{!! url('admin/customer') !!}">Customer</a>
-          </li>
-        </ul>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{!! url('admin/order') !!}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text" href="{!! url('admin/order') !!}">Sale Order</span>
+          </a>
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{!! url('admin/customer') !!}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text" href="{!! url('admin/customer') !!}">Customer</span>
+          </a>
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="{!! url('admin/product') !!}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text" href="{!! url('admin/product') !!}">Product</span>
           </a>
         </li>
+        </ul>
+       
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="{!! url('admin/manageHome') !!}">
             <i class="fa fa-fw fa-table"></i>
@@ -59,19 +65,34 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="{!! url('admin/setting/productCategory') !!}">Product Category</a>
+              <a href="{!! url('admin/setting/productCategory') !!}">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Product Category</span>
+              </a>
             </li>
             <li>
-              <a href="{!! url('admin/setting/option') !!}">Option</a>
+              <a href="{!! url('admin/setting/option') !!}">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Option</span>
+              </a>
             </li>
             <li>
-              <a href="{!! url('admin/setting/city') !!}">City</a>
+              <a href="{!! url('admin/setting/city') !!}">
+                 <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">City</span>
+              </a>
             </li>
             <li>
-              <a href="{!! url('admin/setting/shipper') !!}">Shipper</a>
+              <a href="{!! url('admin/setting/shipper') !!}">
+                 <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Shipper</span>
+              </a>
             </li>
             <li>
-              <a href="{!! url('admin/setting/payment') !!}">Payment</a>
+              <a href="{!! url('admin/setting/payment') !!}">
+                 <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Payment</span>
+              </a>
             </li>
             
           </ul>
@@ -92,8 +113,7 @@
 
 
       <div class="content-wrapper">
-        <div class="container-fluid">
-        </div>
+          @yield('content')
       </div>
       <!-- /.container-fluid-->
       <!-- /.content-wrapper-->
