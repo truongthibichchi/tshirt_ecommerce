@@ -9,6 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Log In</title>
+  <link rel="icon" href="{!! asset('admin_asset/images/icon.ico') !!}"/>
    <base href="{{ asset('') }}">
   <!-- Bootstrap core CSS-->
   <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

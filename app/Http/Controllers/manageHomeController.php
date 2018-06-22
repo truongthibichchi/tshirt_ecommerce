@@ -10,6 +10,6 @@ class manageHomeController extends Controller
     }
 
     public function home(){
-    	return view('admin.index');
+    	return view('admin.manageHome');
     }
 }

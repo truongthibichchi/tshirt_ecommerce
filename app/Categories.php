@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Category extends Model
+class Categories extends Model
 {
     //
     protected $table = 'categories';
     public $timestamp = true;
-    protected $fillable = ['id', 'categoryName'];
+    protected $fillable = ['id', 'categoryName','isActive'];
 }

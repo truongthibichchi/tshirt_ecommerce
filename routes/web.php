@@ -1,9 +1,5 @@
 	<?php
 
-// Route::get('/', function () {
-//     return view('admin.login');
-// });
-
 	Route::group(['prefix'=>'admin'],function(){
 		Route::get('/','manageHomeController@index');
 		Route::get('manageHome','manageHomeController@home');
@@ -12,7 +8,11 @@
 		Route::get('product','manageProductController@index');
 		Route::group(['prefix'=>'setting'],function(){
 			Route::get('/','manageHomeController@home');
-			Route::get('productCategory','manageProductCategoryController@index');
+			Route::group(['prefix'=>'productCategory'],function(){
+					Route::get('/','manageProductCategoryController@index');
+					Route::post('add', 'manageProductCategoryController@addCategory');
+			});
+		
 			Route::get('option','manageOptionController@index');
 			Route::get('city','manageCityController@index');
 			Route::get('shipper','manageShipperController@index');
