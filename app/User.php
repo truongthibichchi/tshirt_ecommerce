@@ -7,10 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-    protected $hidden = ['password', 'remember_token',
-    ];
+	use Notifiable;
+	protected $table = 'user';
+	public $timestamp = true;
+	protected $fillable = ['id', 'firstName','lastName','dateRegister','email','password','verified','phone','address','address2','city','country', 'remember_token','isAdmin'];
+	// public function city(){
+	// 	return $this->belongsTo('App\City', 'city', 'id');
+	// }
 }

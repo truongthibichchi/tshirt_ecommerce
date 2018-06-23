@@ -8,15 +8,15 @@ use App\Categories;
 class manageProductCategoryController extends Controller
 {
     public function index(){
-    	$categoryList = Categories::all();
-        $curCategory= new Categories;
-    	return view('admin.manageProductCategory.index', ['categoryList'=>$categoryList, 'curCategory'=>$curCategory]);
+         
+    	$categoryList = Categories::where([['isActive','=',1]])->get();  
+    	return view('admin.manageProductCategory.index', ['categoryList'=>$categoryList]);
     }
 
     public function addCategory(Request $request){
     	$category = new Categories;
         $category->categoryName=$request->new_categoryName;
-         $category->isActive="1";
+        $category->isActive="1";
        if($category->save()){
         return redirect('admin/setting/productCategory')->with('message','Add successful!');
         }
@@ -42,8 +42,8 @@ class manageProductCategoryController extends Controller
 
     public function deleteCategory(Request $request){
     	  $category = Categories::find($request->delete_id);
-           $category->Delete();
-
+           $category->isActive=0;
+           $category->save();
         return redirect('admin/setting/productCategory')->with('message','Delete successful!');
     }
 }
