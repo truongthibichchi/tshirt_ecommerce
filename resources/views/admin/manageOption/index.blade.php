@@ -39,7 +39,7 @@
 							<td> {{ $ol -> optionName }}</td> 
 							<td class="center">
 								<a href="">
-									<i class="fa fa-pencil fa-fw" style="color: #E8910D"></i>
+									<i class="fa fa-share fa-fw" style="color: #138496"></i>
 								</a>
 							</td>
 							<td class="center">

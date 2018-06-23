@@ -51,4 +51,5 @@
     <!-- Custom scripts for this page-->
     <script src="admin_asset/js/sb-admin-datatables.min.js"></script>
     <script src="admin_asset/js/sb-admin-charts.min.js"></script>
+    @yield('script')
   </div>

@@ -10,7 +10,9 @@
 			Route::get('/','manageHomeController@home');
 			Route::group(['prefix'=>'productCategory'],function(){
 					Route::get('/','manageProductCategoryController@index');
-					Route::post('add', 'manageProductCategoryController@addCategory');
+					Route::post('newCategory', 'manageProductCategoryController@addCategory');
+					Route::post('editCategory','manageProductCategoryController@editCategory');
+					Route::post('deleteCategory', 'manageProductCategoryController@deleteCategory');
 			});
 		
 			Route::get('option','manageOptionController@index');

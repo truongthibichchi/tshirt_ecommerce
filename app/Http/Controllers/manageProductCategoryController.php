@@ -9,14 +9,41 @@ class manageProductCategoryController extends Controller
 {
     public function index(){
     	$categoryList = Categories::all();
-    	return view('admin.manageProductCategory.index', ['categoryList'=>$categoryList]);
+        $curCategory= new Categories;
+    	return view('admin.manageProductCategory.index', ['categoryList'=>$categoryList, 'curCategory'=>$curCategory]);
     }
 
     public function addCategory(Request $request){
-    	echo $request->categoryName;
+    	$category = new Categories;
+        $category->categoryName=$request->new_categoryName;
+         $category->isActive="1";
+       if($category->save()){
+        return redirect('admin/setting/productCategory')->with('message','Add successful!');
+        }
     }
 
-    public function delete(Request $request){
-    	
+    public function editCategory(Request $request){
+        $category = Categories::find($request->edit_id);
+          $this->validate($request,
+            [
+                'edit_id'=>'required',
+                'edit_categoryName' => 'unique:Categories,categoryName'
+            ],
+            [
+                'edit_id.required' =>'error',
+                'edit_categoryName.unique' => 'This category has existed, please try another name!',
+            ]);
+
+             
+             $category->categoryName=$request->edit_categoryName;
+             $category->save();
+            return redirect('admin/setting/productCategory')->with('message','Edit successful!');  
+   }
+
+    public function deleteCategory(Request $request){
+    	  $category = Categories::find($request->delete_id);
+           $category->Delete();
+
+        return redirect('admin/setting/productCategory')->with('message','Delete successful!');
     }
 }
