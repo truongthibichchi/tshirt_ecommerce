@@ -115,6 +115,7 @@
 </div>
 </div>
 
+<!-- Modal  -->
 
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
@@ -160,8 +161,10 @@
 						<tr class="odd gradeX" align="center"> 
 							<td> {{ $ol -> id }} </td>
 							<td> {{ $ol -> optionName }}</td> 
-							<td class="center" id="optionValue">
-								<i class="fa fa-share fa-fw" style="color: #138496"></i>
+							<td class="center" id="optionValue"  >
+                <a href="admin/setting/option/{{$ol->id}}">
+                <label class="lable-detail" data-detail="1" style="color: #337AB7"><i><u>Details</u></i></label>
+								<i class="fa fa-external-link fa-fw" style="color: #138496"></i>
 							</td>
 							<td class="center" id="delete">
 								<i class="fa  fa-trash  fa-fw"   style="color: red"></i>
@@ -198,6 +201,12 @@
      $('#delete_id').val(id);
      $('#delete_optionName').val(optionName);
      $('#modalDelete').modal('show');
+  });
+  </script>
+  <script >
+     $(document).on('click','#optionValue',function() {
+    var id = $(this).closest('tr').find('td:eq(0)').text();
+      $.get("admin/setting/option/value", {id: id}, function (data, status) {})
   });
   </script>
 @endsection

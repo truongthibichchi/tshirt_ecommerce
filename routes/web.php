@@ -24,6 +24,12 @@
 					Route::post('newOption', 'manageOptionController@addOption');
 					Route::post('editOption','manageOptionController@editOption');
 					Route::post('deleteOption', 'manageOptionController@deleteOption');
+					Route::group(['prefix'=>'{id}'],function(){
+					Route::get('/','manageOptionController@optionValue');
+					Route::post('new', 'manageOptionController@addValue');
+					Route::post('edit','manageOptionController@editValue');
+					Route::post('delete', 'manageOptionController@deleteValue');
+			});
 			});
 			Route::group(['prefix'=>'city'],function(){
 					Route::get('/','manageCityController@index');
