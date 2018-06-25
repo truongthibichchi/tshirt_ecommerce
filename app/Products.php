@@ -5,13 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Product extends Model
+class Products extends Model
 {
     //
     protected $table = 'products';
     public $timestamp = true;
 	
-	protected $fillable = ['id', 'productName','productDescript', 'categoryID', 'defaultImage', 'active'];
+	protected $fillable = ['id', 'productName','productDescript', 'categoryID', 'defaultImage', 'price', 'active'];
 	public function categories() {
 		return $this->belongsTo('App\Categories', 'categoryID', 'id');
 	}
