@@ -48,7 +48,7 @@
 							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Price</label>
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="new_price" name="new_price" required="">
+								<input type="number" class="form-control" id="new_price" name="new_price" value="0" required="">
 							</div>
 						</div>
 					</div> 
@@ -200,7 +200,7 @@
 	</li>
 </ol>
 
-<!-- Example DataTables Card-->
+<!-- DataTables -->
 <div class="card mb-3">
 	<div class="card-header">
 		<button id="btnAdd" class="btn btn-info" data-toggle="modal" data-target="#modalNew">+ New</button>
@@ -244,8 +244,8 @@
 							<td> {{ $pl -> Categories->categoryName }}</td> 
 							<td> {{ $pl -> productDescript }}</td> 
 							<td>{{$pl -> price }}</td>
-							<td class="center" id="optionValue"  >
-								<a href="admin/setting/product/{{$pl->id}}">
+							<td class="center" id="variant"  >
+								<a href="admin/product/{{$pl->id}}">
 									<label class="lable-detail" data-detail="1" style="color: #337AB7"><i><u>Details</u></i></label>
 									<i class="fa fa-external-link fa-fw" style="color: #138496"></i>
 								</td> 

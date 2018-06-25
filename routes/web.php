@@ -16,7 +16,7 @@
 			Route::post('editProduct','manageProductController@editProduct');
 			Route::post('deleteProduct', 'manageProductController@deleteProduct');
 			Route::group(['prefix'=>'{id}'],function(){
-					Route::get('/','manageProductController@optionValue');
+					Route::get('/','manageProductController@variant');
 					Route::post('new', 'manageProductController@addVariant');
 					Route::post('edit','manageProductController@editVariant');
 					Route::post('delete', 'manageProductController@deleteVariant');
