@@ -174,20 +174,20 @@
 							<td> {{ $ol -> Customer->firstName }}<span> </span>{{ $ol -> Customer->lastName}}</td> 
 							<td> {{ $ol -> City ->cityName}}</td> 
 							<td> {{ $ol -> Stt_order->sttName }}</td> 
-							<td class="center" id="products"  >
+							<td style='cursor:pointer' class="center" id="products"  >
 								<a href="admin/order/{{$ol->id}}">
 									<label class="lable-detail" data-detail="1" style="color: #337AB7"><i><u>Details</u></i></label>
 									<i class="fa fa-external-link fa-fw" style="color: #138496"></i>
 							</td>
-							<td class="center" id="shipper"  > 
+							<td style='cursor:pointer' class="center" id="shipper"  > 
 								<i class="fa fa-pencil fa-fw "  style="color: #E8910D" ></i>
 							</td>
-							<td class="center" id="payment">{{ $ol -> Payment_type 	->type}}
-								<i class="fa fa-pencil fa-fw "  style="color: #34A853" ></i>
+							<td style='cursor:pointer' class="center" id="payment">{{ $ol -> Payment_type 	->type}}
+								<i  class="fa fa-pencil fa-fw "  style="color: #34A853" ></i>
 							</td>
 							
-							<td class="center" id="delete" >
-									<i class="fa  fa-trash  fa-fw"   style="color: red"></i>
+							<td style='cursor:pointer' class="center" id="delete" >
+									<i  class="fa  fa-trash  fa-fw"   style="color: red"></i>
 							</td>
 
 							</tr> 

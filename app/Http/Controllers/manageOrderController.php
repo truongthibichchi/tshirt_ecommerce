@@ -69,6 +69,10 @@ class manageOrderController extends Controller
 	public function orderLine($id){
 		$order=Sale_order::find($id);
 		$orderLine = Order_line::where([['orderID','=',$id]])->get();
-		return view('admin.manageOrder.orderLine', ['order'=>$order,'orderLine'=>$orderLine]);
+		$variantList=Variants::all();
+		$imageList = Images::all();
+		$priceList = Pricelist::all();
+		$skuList = Skus::all();
+		return view('admin.manageOrder.orderLine', ['order'=>$order,'orderLine'=>$orderLine, 'variantList'=>$variantList,'imageList'=>$imageList, 'priceList'=>$priceList, 'skuList'=>$skuList]);
 	}
 }

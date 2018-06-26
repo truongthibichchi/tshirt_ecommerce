@@ -37,4 +37,6 @@ class Sale_order extends Model
    public function customer(){
       return $this->belongsTo('App\User', 'customer','id');
    }
+
+
 }
