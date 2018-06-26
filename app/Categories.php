@@ -9,6 +9,6 @@ class Categories extends Model
 {
     //
     protected $table = 'categories';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['id', 'categoryName','isActive'];
 }

@@ -11,7 +11,7 @@ class Sale_order extends Model
     protected $fillable = ['id', 'paymentType', 'shipper', 'customer','orderedDate','shippedDate','orderPhone','orderAddress1','orderAddress2','orderCity','orderCountry','stt'];
 
    public function payment_type(){
-   		return $this->belongsTo('App\Payment_type','paymentTypeID', 'id');
+   		return $this->belongsTo('App\Payment_type','paymentType', 'id');
    }
 
    public function shipper(){
@@ -32,5 +32,9 @@ class Sale_order extends Model
    }
    public function order_line(){
    		return $this->hasMany('App\Order_line', 'orderID', 'id');
+   }
+
+   public function customer(){
+      return $this->belongsTo('App\User', 'customer','id');
    }
 }

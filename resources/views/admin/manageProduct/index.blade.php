@@ -27,10 +27,10 @@
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon"></span>
 								<select class="form-control input-width" name="new_category">
-                                    @foreach($categoryList as $cl)
-                                        <option value="{{ $cl->id }}">{{ $cl->categoryName }}</option>
-                                    @endforeach
-                                </select>
+									@foreach($categoryList as $cl)
+									<option value="{{ $cl->id }}">{{ $cl->categoryName }}</option>
+									@endforeach
+								</select>
 							</div>
 						</div>
 					</div> 
@@ -82,7 +82,7 @@
 				<h4 class="modal-title" id="myModalLabel" style="color: red">Do you want to delete?</h4>
 			</div>
 			<div class="modal-body">
-				<form  action="admin/customer/deleteCustomer" method="POST">
+				<form  action="admin/product/deleteProduct" method="POST">
 					{{csrf_field()}}
 					<div class="form-group">
 						<div class="col-xs-10">
@@ -111,10 +111,10 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Edit Customer</h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Product</h4>
 			</div>
 			<div class="modal-body">
-				<form  action="admin/customer/editCustomer" method="POST">
+				<form  action="admin/product/editProduct" method="POST">
 					{{csrf_field()}}
 					<div class="form-group">
 						<div class="col-xs-10">
@@ -127,55 +127,50 @@
 					</div> 
 					<div class="form-group"> 
 						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>First Name</label>
+							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Product Name</label>
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_firstName" name="edit_firstName" required="">
+								<input type="text" class="form-control" id="edit_productName" name="edit_productName" required="">
+							</div>
+						</div>
+					</div> 
+					<div class="form-group"> 
+						<div class="col-xs-10">		
+							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Category</label>
+							<div class="input-group col-sm-12">
+								<span class="input-group-addon"></span>
+								<select class="form-control input-width" name="edit_category">
+									@foreach($categoryList as $cl)
+									<option value="{{ $cl->id }}">{{ $cl->categoryName }}</option>
+									@endforeach
+								</select>
 							</div>
 						</div>
 					</div> 
 					<div class="form-group"> 
 						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Last Name</label>
+							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Description</label>
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_lastName" name="edit_lastName" required="">
+								<input type="text" class="form-control" id="edit_description" name="edit_description" required="">
+							</div>
+						</div>
+					</div>
+					<div class="form-group"> 
+						<div class="col-xs-10">
+							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Price</label>
+							<div class="input-group col-sm-12">
+								<span class="input-group-addon"></span>
+								<input type="number" class="form-control" id="edit_price" name="edit_price" value="0" required="">
 							</div>
 						</div>
 					</div> 
 					<div class="form-group"> 
 						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Email</label>
+							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Default Image</label>
 							<div class="input-group col-sm-12">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_email" name="edit_email" required="">
-							</div>
-						</div>
-					</div> 
-					<div class="form-group"> 
-						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Phone</label>
-							<div class="input-group col-sm-12">
-								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_phone" name="edit_phone" required="">
-							</div>
-						</div>
-					</div> 
-					<div class="form-group"> 
-						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>City</label>
-							<div class="input-group col-sm-12">
-								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_city" name="edit_city" required="">
-							</div>
-						</div>
-					</div> 
-					<div class="form-group"> 
-						<div class="col-xs-10">
-							<label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Country</label>
-							<div class="input-group col-sm-12">
-								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" id="edit_country" name="edit_country" required="">
+								<input type="file" class="form-control" id="edit_defaultImage" name="edit_defaultImage">
 							</div>
 						</div>
 					</div> 
@@ -225,7 +220,7 @@
 							<th>Image</th>  
 							<th>Name</th>
 							<th>Category</th>
-							<th>Description</th>
+							<th >Description</th>
 							<th>Price</th>
 							<th>Variants</th>
 							<th>Delete</th>
@@ -241,7 +236,14 @@
 								<img width="80px" class="stretch" src="storage/product/{{$pl->defaultImage}}">
 							</td> 
 							<td> {{ $pl -> productName }} </td>
-							<td> {{ $pl -> Categories->categoryName }}</td> 
+							
+								<!-- @foreach($categoryList as $cl)
+									@if($cl->id==$pl->categoryID)
+									<td>{{ $cl -> categoryName }}</td> 
+									@endif
+								@endforeach -->
+
+							<td>{{ $pl -> Categories->categoryName }}</td> 	
 							<td> {{ $pl -> productDescript }}</td> 
 							<td>{{$pl -> price }}</td>
 							<td class="center" id="variant"  >
@@ -270,42 +272,26 @@
 	<!-- script -->
 	@section('script')
 	{{csrf_field()}}
-	<!-- <script>
+	<script>
 		$(document).on('click','#edit',function() {
 			var id = $(this).closest('tr').find('td:eq(0)').text();
-			var firstName =$(this).closest('tr').find('td:eq(1)').text();
-			var lastName =$(this).closest('tr').find('td:eq(2)').text();
-			var email =$(this).closest('tr').find('td:eq(3)').text();
-			var phone =$(this).closest('tr').find('td:eq(4)').text();
-			var city =$(this).closest('tr').find('td:eq(5)').text();
-			var country =$(this).closest('tr').find('td:eq(6)').text();
+			var name =$(this).closest('tr').find('td:eq(2)').text();
+			var category =$(this).closest('tr').find('td:eq(3)').text();
+			var description =$(this).closest('tr').find('td:eq(4)').text();
+			var price =$(this).closest('tr').find('td:eq(5)').text();
 			$('#edit_id').val(id);
-			$('#edit_firstName').val(firstName);
-			$('#edit_lastName').val(lastName);
-			$('#edit_email').val(email);
-			$('#edit_phone').val(phone);
-			$('#edit_city').val(city);
-			$('#edit_country').val(country);
+			$('#edit_productName').val(name);
+			$('#edit_category').val(category);
+			$('#edit_description').val(description);
+			$('#edit_price').val(price);
 			$('#modalEdit').modal('show');
 		}); 
 	</script>
 	<script >
 		$(document).on('click','#delete',function() {
 			var id = $(this).closest('tr').find('td:eq(0)').text();
-			var firstName =$(this).closest('tr').find('td:eq(1)').text();
-			var lastName =$(this).closest('tr').find('td:eq(2)').text();
-			var email =$(this).closest('tr').find('td:eq(3)').text();
-			var phone =$(this).closest('tr').find('td:eq(4)').text();
-			var city =$(this).closest('tr').find('td:eq(5)').text();
-			var country =$(this).closest('tr').find('td:eq(6)').text();
 			$('#delete_id').val(id);
-			$('#delete_firstName').val(firstName);
-			$('#delete_lastName').val(lastName);
-			$('#delete_email').val(email);
-			$('#delete_phone').val(phone);
-			$('#delete_city').val(city);
-			$('#delete_country').val(country);
 			$('#modalDelete').modal('show');
 		});
-	</script> -->
+	</script>
 	@endsection

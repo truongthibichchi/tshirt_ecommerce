@@ -9,5 +9,5 @@ class Options extends Model
     //
     protected $table = 'options';
     public $timestamp = true;
-    protected $fillable = ['id', 'attrName'];
+    protected $fillable = ['id', 'optionName','isActive' ];
 }

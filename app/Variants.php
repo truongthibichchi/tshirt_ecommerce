@@ -11,6 +11,10 @@ class Variants extends Model
     protected $fillable = ['skuCode','optionID','valueID'];
 
     public function option_values(){
-    	return $this->belongsTo('App\Option_value','valueID', 'id');
+    	return $this->belongsTo('App\Option_values','valueID', 'id');
+    }
+
+    public function options(){
+    	return $this->belongsTo('App\Options', 'optionID', 'id');
     }
 }

@@ -9,7 +9,7 @@ class Skus extends Model
     //
     protected $table = 'skus';
     public $timestamp = true;
-    protected $fillable = ['skuCode', 'productID', 'inStock','active'];
+    protected $fillable = ['skuCode', 'productID', 'inStock','active','image'];
 
     public function options(){
         return $this->belongsToMany('App\Options', 'Variants', 'skuCode', 'optionID' );

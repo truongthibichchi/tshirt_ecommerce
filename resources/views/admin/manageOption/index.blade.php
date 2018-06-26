@@ -119,20 +119,20 @@
 
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
-	<li class="breadcrumb-item">
-		<a href="{!! url('admin/manageHome') !!}">Home</a>
-	</li>
-	<li class="breadcrumb-item active">
-		<a href="{!! url('admin/setting/option') !!}">Option</a>
-	</li>
+  <li class="breadcrumb-item">
+    <a href="{!! url('admin/manageHome') !!}">Home</a>
+  </li>
+  <li class="breadcrumb-item active">
+    <a href="{!! url('admin/setting/option') !!}">Option</a>
+  </li>
 </ol>
 
 
 <!-- Example DataTables Card-->
 <div class="card mb-3">
-	<div class="card-header">
-		<button id="btnAdd" class="btn btn-info" data-toggle="modal" data-target="#modalNew">+ New</button>
-		@if(count($errors) > 0)
+  <div class="card-header">
+    <button id="btnAdd" class="btn btn-info" data-toggle="modal" data-target="#modalNew">+ New</button>
+    @if(count($errors) > 0)
     <div class="alert alert-danger">
       @foreach($errors->all() as $err)
       <strong>{{$err}}</strong><br/>
@@ -144,42 +144,42 @@
       <strong>{{ session('message') }}</strong>
     </div>
     @endif
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-					<thead>
-						<tr align="center">
-							<th>ID</th>
-							<th>Option Name</th>  
-							<th>Value</th>
-							<th>Delete</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach ($optionList as $ol)
-						<tr class="odd gradeX" align="center"> 
-							<td> {{ $ol -> id }} </td>
-							<td> {{ $ol -> optionName }}</td> 
-							<td class="center" id="optionValue"  >
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr align="center">
+              <th>ID</th>
+              <th>Option Name</th>  
+              <th>Value</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($optionList as $ol)
+            <tr class="odd gradeX" align="center"> 
+              <td> {{ $ol -> id }} </td>
+              <td> {{ $ol -> optionName }}</td> 
+              <td class="center" id="optionValue"  >
                 <a href="admin/setting/option/{{$ol->id}}">
                 <label class="lable-detail" data-detail="1" style="color: #337AB7"><i><u>Details</u></i></label>
-								<i class="fa fa-external-link fa-fw" style="color: #138496"></i>
-							</td>
-							<td class="center" id="delete">
-								<i class="fa  fa-trash  fa-fw"   style="color: red"></i>
-							</td>
-							<td class="center" id="edit"  > 
-								<i class="fa fa-pencil fa-fw "  style="color: #E8910D" ></i>
-							</td>
-						</tr> 
-						@endforeach 
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="card-footer small text-muted"></div>
-	</div>
+                <i class="fa fa-external-link fa-fw" style="color: #138496"></i>
+              </td>
+              <td class="center" id="delete">
+                <i class="fa  fa-trash  fa-fw"   style="color: red"></i>
+              </td>
+              <td class="center" id="edit"  > 
+                <i class="fa fa-pencil fa-fw "  style="color: #E8910D" ></i>
+              </td>
+            </tr> 
+            @endforeach 
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer small text-muted"></div>
+  </div>
 </div>
 @endsection
 
