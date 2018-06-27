@@ -66,4 +66,6 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::post('deletePayment', 'managePaymentController@deletePayment');
 		});
 	});
+
+	Route::get('revenue','revenueController@index');
 });

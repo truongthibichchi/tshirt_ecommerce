@@ -70,7 +70,7 @@
 
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="{!! url('admin/manageHome') !!}">
+          <a class="nav-link" href="{!! url('admin/revenue') !!}">
             <i class="fa fa-fw fa-signal"></i>
             <span class="nav-link-text">Revenue</span>
           </a>
