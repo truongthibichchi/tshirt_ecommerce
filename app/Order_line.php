@@ -13,6 +13,10 @@ class Order_line extends Model
     public function skus(){
     	return $this-> belongsTo('App\Skus', 'skus', 'skuCode');
     }
+
+    public function sale_order(){
+    	return $this->belongsTo('App\Sale_order','orderID','id');
+    }
 }
 
 

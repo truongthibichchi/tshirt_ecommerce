@@ -171,7 +171,7 @@
 						<tr class="odd gradeX" align="center"> 
 							<td> {{ $ol -> id }} </td>
 							<td>{{ $ol -> orderedDate }}</td>
-							<td> {{ $ol -> Customer->firstName }}<span> </span>{{ $ol -> Customer->lastName}}</td> 
+							<td> {{ $ol -> User['firstName'] }}<span> </span>{{ $ol -> User['lastName']}}</td>
 							<td> {{ $ol -> City ->cityName}}</td> 
 							<td> {{ $ol -> Stt_order->sttName }}</td> 
 							<td style='cursor:pointer' class="center" id="products"  >
@@ -179,12 +179,13 @@
 									<label class="lable-detail" data-detail="1" style="color: #337AB7"><i><u>Details</u></i></label>
 									<i class="fa fa-external-link fa-fw" style="color: #138496"></i>
 							</td>
+							<td style='cursor:pointer' class="center" id="payment">{{ $ol -> Payment_type['type']}}
+								<i  class="fa fa-pencil fa-fw "  style="color: #34A853" ></i>
+							</td>
 							<td style='cursor:pointer' class="center" id="shipper"  > 
 								<i class="fa fa-pencil fa-fw "  style="color: #E8910D" ></i>
 							</td>
-							<td style='cursor:pointer' class="center" id="payment">{{ $ol -> Payment_type 	->type}}
-								<i  class="fa fa-pencil fa-fw "  style="color: #34A853" ></i>
-							</td>
+							
 							
 							<td style='cursor:pointer' class="center" id="delete" >
 									<i  class="fa  fa-trash  fa-fw"   style="color: red"></i>

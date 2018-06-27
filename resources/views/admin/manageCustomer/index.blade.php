@@ -1,7 +1,7 @@
 @extends('admin.layout.index')
 @section('contentPages')
 <!-- Modal New -->
-<div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -78,7 +78,7 @@
 	</div>
 </div>
 
-<!-- modal Delete -->
+modal Delete
 <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -110,7 +110,7 @@
 	</div>
 </div>
 
-<!-- Modal Edit -->
+Modal Edit
 <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -194,7 +194,7 @@
 
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
@@ -209,7 +209,7 @@
 <!-- Example DataTables Card-->
 <div class="card mb-3">
 	<div class="card-header">
-		<button id="btnAdd" class="btn btn-info" data-toggle="modal" data-target="#modalNew">+ New</button>
+		<!-- <button id="btnAdd" class="btn btn-info" data-toggle="modal" data-target="#modalNew">+ New</button> -->
 		@if(count($errors) > 0)
 		<div class="alert alert-danger">
 			@foreach($errors->all() as $err)
@@ -234,8 +234,8 @@
 							<th>Phone</th>
 							<th>City</th>
 							<th>Country</th>
-							<th>Delete</th>
-							<th>Edit</th>
+<!-- 							<th>Delete</th>
+							<th>Edit</th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -246,16 +246,14 @@
 							<td> {{ $cl -> lastName }} </td>
 							<td> {{ $cl -> email }}</td> 
 							<td> {{ $cl -> phone }}</td> 
-							<td> {{ $cl -> city }}</td> 
+							<td> {{ $cl ->City['cityName'] }}</td> 
 							<td> {{ $cl -> country }}</td> 
-							<td class="center" id="delete" >
+						<!-- 	<td class="center" id="delete" >
 								<i class="fa  fa-trash  fa-fw"   style="color: red"></i>
 							</td>
 							<td class="center" id="edit"  > 
 								<i class="fa fa-pencil fa-fw "  style="color: #E8910D" ></i>
-							</td>
-							
-
+							</td> -->
 						</tr> 
 						@endforeach 
 					</tbody>
@@ -271,7 +269,7 @@
 <!-- script -->
 @section('script')
 {{csrf_field()}}
-<script>
+<!-- <script>
 	$(document).on('click','#edit',function() {
 		var id = $(this).closest('tr').find('td:eq(0)').text();
 		var firstName =$(this).closest('tr').find('td:eq(1)').text();
@@ -308,5 +306,5 @@
 		$('#delete_country').val(country);
 		$('#modalDelete').modal('show');
 	});
-</script>
+</script> -->
 @endsection

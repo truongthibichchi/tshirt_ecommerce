@@ -8,10 +8,10 @@ class Sale_order extends Model
 {
     protected $table = 'sale_order';
     public $timestamp = true;
-    protected $fillable = ['id', 'paymentType', 'shipper', 'customer','orderedDate','shippedDate','orderPhone','orderAddress1','orderAddress2','orderCity','orderCountry','stt'];
+    protected $fillable = ['id', 'payment', 'shipper', 'customer','orderedDate','shippedDate','orderPhone','orderAddress1','orderAddress2','orderCity','orderCountry','stt'];
 
-   public function payment_type(){
-   		return $this->belongsTo('App\Payment_type','paymentType', 'id');
+   public function Payment_type(){
+   		return $this->belongsTo('App\Payment_type','payment', 'id');
    }
 
    public function shipper(){
@@ -34,7 +34,7 @@ class Sale_order extends Model
    		return $this->hasMany('App\Order_line', 'orderID', 'id');
    }
 
-   public function customer(){
+   public function user(){
       return $this->belongsTo('App\User', 'customer','id');
    }
 

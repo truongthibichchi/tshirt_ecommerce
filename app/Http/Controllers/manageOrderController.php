@@ -16,6 +16,7 @@ use App\Sale_order;
 use App\Order_line;
 use App\Stt_order;
 use App\Shipper;
+use App\User;
 class manageOrderController extends Controller
 {
 	public function index(){

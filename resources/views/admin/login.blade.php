@@ -21,25 +21,39 @@
 
 <body class="bg-dark">
   <div class="container">
+     @if(session('message'))
+    <div class="alert alert-danger">
+      <strong>{{ session('message') }}</strong>
+    </div>
+    @endif
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form >
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="emailuser" type="email" aria-describedby="emailHelp" placeholder="Enter email" required="">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" required=""> Remember Password</label>
+        <form  action="admin/login" method="POST" enctype="multipart/form-data">
+          {{csrf_field()}}
+          <div class="form-group"> 
+            <div class="col-xs-10">
+              <label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>email</label>
+              <div class="input-group col-sm-12">
+                <span class="input-group-addon"></span>
+                <input type="text" class="form-control" id="email" name="email" required="">
+              </div>
+            </div>
+          </div> 
+          <div class="form-group"> 
+            <div class="col-xs-10">
+              <label class="control-label" ><i class="fa fa-star" aria-hidden="true"></i>Password</label>
+              <div class="input-group col-sm-12">
+                <span class="input-group-addon"></span>
+                <input type="password" class="form-control" id="password" name="password" required="">
+              </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="{!! url('admin/manageHome') !!}">Login</a>
+        
+          <div class="modal-footer">
+            <button id="btnSubmitModel" type="submit" class="btn btn-info">Log In</button>    
+          </div>
+
         </form>
       </div>
     </div>

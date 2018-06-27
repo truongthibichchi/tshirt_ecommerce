@@ -1,6 +1,12 @@
 <?php
-Route::group(['prefix'=>'admin'],function(){
-	Route::get('/','manageHomeController@index');
+Route::get('admin/login','userController@Login');
+
+Route::post('admin/login','userController@LoginAuth');
+
+Route::get('admin/logout','userController@Logout');
+
+Route::group(['prefix'=>'admin','middleware' => 'adminAuth'],function(){
+	Route::get('/','manageHomeController@home');
 	Route::get('manageHome','manageHomeController@home');
 	Route::group(['prefix'=>'order'],function(){
 		Route::get('/','manageOrderController@index');
